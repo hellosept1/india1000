@@ -72,8 +72,8 @@
   </script>
 
   <script>
-const SHEET_ID = "1plTOnbBlSM4xitgtvyPbfDj7wknaEl3H5w7m3W-v2MY"; // replace with your own
-const SHEET_NAME = "Form Responses 1"; // default name; check at bottom tab of Sheet
+const SHEET_ID = "1plTOnbBlSM4xitgtvyPbfDj7wknaEl3H5w7m3W-v2MY"; // replace this
+const SHEET_NAME = "Form Responses 1"; // usually default name
 
 async function updateCounter() {
   try {
@@ -83,15 +83,23 @@ async function updateCounter() {
     const text = await res.text();
     const json = JSON.parse(text.substr(47).slice(0, -2));
     const rows = json.table.rows.length; // number of form submissions
-    const spotsLeft = 1000 - rows;
-    document.getElementById("counter").innerHTML =
-      `🌟 Dreamers in the Mosaic: <strong>${spotsLeft}</strong> / 1000`;
+
+    const counter = document.getElementById("counter");
+    const progress = document.getElementById("progress-fill");
+
+    counter.innerHTML = `🌟 Dreamers in the Mosaic: <strong>${rows}</strong> / 1000`;
+
+    const fillPercent = Math.min((rows / 1000) * 100, 100);
+    progress.style.width = fillPercent + "%";
+
   } catch (err) {
-    document.getElementById("counter").textContent = "Unable to load counter 😔";
+    document.getElementById("counter").textContent = "Unable to load data 😔";
     console.error(err);
   }
 }
+
 updateCounter();
+
 </script>
 
 </body>
