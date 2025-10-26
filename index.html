@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>India1000 — 1000 Faces, 1 India</title>
+  <meta name="description" content="India1000 — Upload your selfie and dream for India to join a Republic Day AI-powered mosaic. 1000 Faces, 1 India. Coming soon." />
+  <link rel="preload" href="images/hero.png" as="image" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icons/favicon.ico" />
+  <meta name="theme-color" content="#0b1d4d" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="title">1000 <span>Faces</span>, 1 <span>India</span></h1>
+      <p class="coming">COMING SOON</p>
+      <p class="subtext">
+        Upload your selfie + your dream for India. Become part of India’s first
+        AI-powered mosaic tribute on Republic Day 2026.
+      </p>
+
+      <!-- TODO: paste your Google Form link in href -->
+      <a class="cta" href="https://forms.gle/YOUR_FORM_ID" target="_blank" rel="noopener">JOIN THE MOSAIC</a>
+
+      <div class="mini-steps">
+        <div class="step"><div class="icon">📷</div><div>Upload your selfie + dream</div></div>
+        <div class="dash">→</div>
+        <div class="step"><div class="icon">🧩</div><div>AI places your face</div></div>
+        <div class="dash">→</div>
+        <div class="step"><div class="icon">🗺️</div><div>Find yourself on 26 Jan</div></div>
+      </div>
+    </div>
+    <img class="hero-img" src="images/hero.png" alt="India1000 hero" />
+  </header>
+
+  <main>
+    <section class="about">
+      <h2>About the Project</h2>
+      <p>
+        India1000 celebrates India’s people and their dreams. We’re collecting
+        1000 selfies and 1000 hopes, and assembling them into a single India-map mosaic
+        revealed on Republic Day 2026.
+      </p>
+    </section>
+
+    <section class="privacy">
+      <h2>Privacy & Consent</h2>
+      <p>
+        By submitting, you consent to us using your image and text in the public mosaic.
+        We store only what you submit. You can request removal anytime via
+        <a href="mailto:hello@india1000.live">hello@india1000.live</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="y"></span> India1000.live</div>
+    <div class="links">
+      <a href="mailto:hello@india1000.live">Contact</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/" target="_blank" rel="noopener">X</a>
+    </div>
+  </footer>
+
+  <noscript>This site works best with JavaScript enabled.</noscript>
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
