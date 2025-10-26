@@ -164,4 +164,10 @@ main{background:#0b1d4d}
   transition: width 1s ease-out;
 }
 
+.countdown, #timer, .countdown h3 {
+  display: block !important;
+  color: #fff !important;
+}
+
+
 
