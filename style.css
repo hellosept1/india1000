@@ -36,10 +36,10 @@ html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto
   -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 18px rgba(0,0,0,.25));
 }
 .coming{
-  margin:.25rem 0 1rem;font-size:min(9vw,56px);font-weight:800;letter-spacing:2px
+  margin:.25rem 0 1rem;font-size:min(9vw,46px);font-weight:800;letter-spacing:2px
 }
 .subtext{
-  margin:0 auto 1.75rem;max-width:780px;font-size:clamp(16px,2.6vw,20px);opacity:.95
+  margin:0 auto 1.75rem;max-width:820px;font-size:clamp(16px,2.6vw,20px);opacity:.95
 }
 
 /* White button with blue text */
@@ -76,98 +76,69 @@ main{background:#0b1d4d}
   .step{font-size:14px}
 }
 
-.counter-section {
-  text-align: center;
-  background: #0b1d4d;
+/* ===== METRICS CARD (glass) ===== */
+.metrics{
+  margin: 1.25rem auto 0;
+  width: min(680px, 92%);
+  padding: 16px 18px 18px;
+  border-radius: 18px;
+  background: rgba(0,0,0,.35);
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: 0 12px 40px rgba(0,0,0,.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #fff;
-  padding: 40px 10px;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.counter-section strong {
-  color: #facc15;
-  font-size: 1.8rem;
 }
 
-/* Counter container */
-.join-counter {
-  margin-top: 1.5rem;
-  text-align: center;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.1rem;
+/* Top line: counter */
+.metric-line{
+  display:flex; align-items:center; justify-content:center; gap:.5rem;
+  font-weight:700; letter-spacing:.3px; flex-wrap:wrap;
 }
-/* Countdown section */
-.countdown {
-  margin-top: 1.5rem;
-  text-align: center;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-}
+.metric-line .spark{ color:#facc15; filter: drop-shadow(0 0 6px rgba(250,204,21,.8)); }
+#counter-label{ opacity:.95 }
+#counter-value{ font-weight:900; }
+.metric-line .total{ opacity:.9 }
 
-.countdown h3 {
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
-  color: #ffffff;
-  text-transform: uppercase;
-  font-size: 1.1rem;
+/* Progress */
+.progress{
+  position: relative; height: 10px; margin: 10px auto 2px;
+  width: 100%; background: rgba(255,255,255,.18); border-radius: 999px; overflow:hidden;
+  box-shadow: inset 0 0 10px rgba(0,0,0,.35);
 }
-
-#timer {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 1rem;
+#progress-fill{
+  height:100%; width:0%;
+  background: linear-gradient(90deg,#ff9933,#ffffff,#138808);
+  background-size:300% 100%; animation: wave 3s linear infinite;
+  border-radius:999px; transition: width 1s ease-out;
+}
+@keyframes wave{
+  0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}
 }
 
-#timer span {
-  display: inline-block;
-  text-align: center;
-  color: #facc15; /* gold text */
+/* Countdown */
+.countdown{ margin-top: 12px; text-align:center; }
+.countdown-title{
+  font-size:.85rem; letter-spacing:2px; opacity:.95; margin-bottom:8px;
+  text-transform:uppercase;
 }
-
-#timer strong {
-  display: block;
-  font-size: 1.8rem;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.timer-grid{
+  display:grid; grid-template-columns: repeat(4, minmax(70px, 1fr));
+  gap:12px; justify-items:center;
 }
-
-
-/* Counter text */
-#counter {
-  margin-bottom: 0.6rem;
-  font-size: 1.25rem;
-  color: #facc15; /* gold highlight */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  letter-spacing: 0.5px;
+.time{
+  width:100%; padding:10px 8px; border-radius:14px;
+  background: rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
 }
-
-/* Progress bar outer frame */
-.progress-bar {
-  width: 80%;
-  max-width: 400px;
-  height: 10px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 10px;
-  margin: 0 auto;
-  overflow: hidden;
+.num{
+  font-size:1.6rem; line-height:1; font-weight:900; color:#fff;
+  text-shadow:0 0 10px rgba(0,0,0,.45);
 }
+.lbl{ font-size:.8rem; opacity:.9; margin-top:4px }
 
-/* Progress fill animation */
-#progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
-  border-radius: 10px;
-  transition: width 1s ease-out;
+/* Mobile tweaks */
+@media (max-width:560px){
+  .num{ font-size:1.4rem }
+  .timer-grid{ gap:10px }
 }
-
-.countdown, #timer, .countdown h3 {
-  display: block !important;
-  color: #fff !important;
-}
-
-
-
