@@ -21,6 +21,13 @@
       AI-powered mosaic tribute on Republic Day 2026.
     </p>
     <a class="cta" href="https://forms.gle/H7dtUGTzmGamo62UA" target="_blank">JOIN THE MOSAIC</a>
+    <div class="join-counter">
+  <div id="counter">🌟 Dreamers in the Mosaic: Loading...</div>
+  <div class="progress-bar">
+    <div id="progress-fill"></div>
+  </div>
+</div>
+
   </div>
 </header>
 
@@ -78,7 +85,7 @@ async function updateCounter() {
     const rows = json.table.rows.length; // number of form submissions
     const spotsLeft = 1000 - rows;
     document.getElementById("counter").innerHTML =
-      `🧩 Spots left: <strong>${spotsLeft}</strong> / 1000`;
+      `🌟 Dreamers in the Mosaic: <strong>${spotsLeft}</strong> / 1000`;
   } catch (err) {
     document.getElementById("counter").textContent = "Unable to load counter 😔";
     console.error(err);
