@@ -89,3 +89,42 @@ main{background:#0b1d4d}
   font-size: 1.8rem;
 }
 
+/* Counter container */
+.join-counter {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Counter text */
+#counter {
+  margin-bottom: 0.6rem;
+  font-size: 1.25rem;
+  color: #facc15; /* gold highlight */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+}
+
+/* Progress bar outer frame */
+.progress-bar {
+  width: 80%;
+  max-width: 400px;
+  height: 10px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Progress fill animation */
+#progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff9933, #ffffff, #138808);
+  border-radius: 10px;
+  transition: width 1s ease-out;
+}
+
+
